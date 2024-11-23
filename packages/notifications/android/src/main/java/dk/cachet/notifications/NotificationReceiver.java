@@ -16,6 +16,9 @@ public class NotificationReceiver extends BroadcastReceiver {
 
   private EventSink eventSink;
 
+  public NotificationReceiver() {
+  }
+
   public NotificationReceiver(EventSink eventSink) {
     this.eventSink = eventSink;
   }

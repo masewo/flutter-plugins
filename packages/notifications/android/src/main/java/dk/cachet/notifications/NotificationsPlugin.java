@@ -1,5 +1,7 @@
 package dk.cachet.notifications;
 
+import static android.content.Context.RECEIVER_EXPORTED;
+
 import android.app.Notification;
 import android.content.ComponentName;
 import android.content.Context;
@@ -81,7 +83,7 @@ public class NotificationsPlugin implements FlutterPlugin, EventChannel.StreamHa
       intentFilter.addAction(NotificationListener.NOTIFICATION_INTENT);
 
       NotificationReceiver receiver = new NotificationReceiver(events);
-      context.registerReceiver(receiver, intentFilter);
+      context.registerReceiver(receiver, intentFilter, RECEIVER_EXPORTED);
 
       /// Set up listener intent
       Intent listenerIntent = new Intent(context, NotificationListener.class);
